@@ -1,0 +1,12 @@
+{
+  "name": "my-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "my-cli": "bin/cli.ts"
+  },
+  "dependencies": {
+    "@types/node": "^18.7.6"
+  }
+}
