@@ -15,10 +15,20 @@
     $ info You can now run `yarn link "my-cli"` in the projects where you want to use this package and it will be used instead.
     $ Done in 0.06s.
     ```
-5. 修改 `bin - cli.ts` 文件
+5. 不同代码运行环境安装不同的环境
+   - `node` 运行环境: [安装地址](https://nodejs.org/zh-cn/)
+   - `ts-node` 运行环境: 全局安装 ts-node 环境，`yarn global add ts-node`
+6. 修改 `bin - cli.ts` 文件
     ```ts
-    #! /usr/bin/env node
+    #! /usr/bin/env node 或 #! /usr/bin/env ts-node
     // 第一行指定命令运环境
 
-    process.argv // 获取命令行中的参数
+    // 获取命令行中的参数
+    process.argv
+    
+    // commander 模块可以快捷实现命令行工具，安装: yarn add commander -S
+    const { program } = require('commander') // commomjs
+    import { Command } from 'commander' // ts
+    const program = new Command()
+    
     ```
